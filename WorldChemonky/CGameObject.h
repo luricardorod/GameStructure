@@ -4,11 +4,13 @@
 class CGameObject
 {
 public:
-	CVector2D _mPosition;
+	CVector2D _mPosition; //Mismo problema con estandar de variables
 	virtual void Init();
 	virtual void Destroy();
 	virtual void Update(float delta);
 	virtual void Render();
-	~CGameObject();
+
+  //Falta los constructores
+	~CGameObject(); //TODOS los destructores en clases derivables deben ser virtuales
 };
 

@@ -4,7 +4,7 @@
 class CBoid:public CGameObject
 {
 private:
-	CVector2D _mVelocity;
+	CVector2D _mVelocity; //El standard de variables miembro debería de ser "m_"
 	float _mMaxSpeed;
 
 public:
@@ -19,5 +19,7 @@ public:
 	CVector2D Evade(CVector2D position, CVector2D direction, float velocity, float timePrediction, float radiusOfForceAplication);
 	CVector2D Wander1(CVector2D SizeWorld, float radiusArrival, float timeSeek);
 	CVector2D Wander2(float offset,float radiusNextPoint, float visionAngle);
+
+  //Faltan constructores y destructor virtual
 };
 
