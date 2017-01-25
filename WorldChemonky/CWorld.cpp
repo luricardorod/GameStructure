@@ -4,6 +4,7 @@
 
 void CWorld::Init()
 {
+  //Use autos o iteradores c++11
 	for (list<CGameObject*>::iterator gameObject = gameObjects.begin(); gameObject != gameObjects.end(); gameObject++) {
 		(*gameObject)->Init();
 	}

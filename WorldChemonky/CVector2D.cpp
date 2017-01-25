@@ -50,10 +50,10 @@ float Dot(const CVector2D &A, const CVector2D &B)
 }
 
 float Magnity(const CVector2D& A)
-{
+{//Que pasa si la magnitud es 0?
 	return std::sqrt(Dot(A, A));
 }
 CVector2D Normalize(const CVector2D& A)
-{
+{//Que pasa si la magnitud es 0?
 	return A / Magnity(A);
 }
