@@ -1,59 +1,93 @@
 #include "stdafx.h"
 #include "CVector2D.h"
 #include <cmath>
-CVector2D::CVector2D()
-{
-}
 
-CVector2D::CVector2D(const CVector2D& V)
+CVector2D::CVector2D(CVector2D &V)
 {
 	x = V.x;
 	y = V.y;
 }
-CVector2D::CVector2D(const float fx, const float fy)
+CVector2D::CVector2D(float fx, float fy)
 {
 	x = fx;
 	y = fy;
 }
 
+CVector2D::CVector2D()
+{
+}
+
 CVector2D::~CVector2D()
 {
 }
-CVector2D operator* (const CVector2D  &A, const CVector2D &B)
-{
-	return CVector2D(A.x*B.x, A.y*B.y);
-}
-CVector2D operator* (float s, const CVector2D &A)
-{
-	return CVector2D(A.x*s, A.y*s);
-}
-CVector2D operator* (const CVector2D &A, float s)
-{
-	return s*A;
-}
-CVector2D operator/ (const CVector2D &A, float s)
-{
-	return A*(1 / s);
-}
-CVector2D operator+(const CVector2D& A, const CVector2D& B)
-{
-	return CVector2D(A.x + B.x, A.y + B.y);
-}
-CVector2D operator-(const CVector2D& A, const CVector2D& B)
-{
-	return CVector2D(A.x - B.x, A.y - B.y);
 
-}
-float Dot(const CVector2D &A, const CVector2D &B)
+CVector2D CVector2D::operator* (CVector2D  &A)
 {
-	return A.x*B.x + A.y*B.y;
+	return CVector2D(A.x*x, A.y*y);
 }
 
-float Magnity(const CVector2D& A)
-{//Que pasa si la magnitud es 0?
-	return std::sqrt(Dot(A, A));
+CVector2D CVector2D::operator* (float s)
+{
+	return CVector2D(x*s, y*s);
 }
-CVector2D Normalize(const CVector2D& A)
-{//Que pasa si la magnitud es 0?
-	return A / Magnity(A);
+
+CVector2D CVector2D::operator*=(float s)
+{
+	x = x*s;
+	y = y*s;
+	return (*this);
+}
+
+CVector2D CVector2D::operator/ (float s)
+{
+	return (*this)*(1 / s);
+}
+
+CVector2D CVector2D::operator+(CVector2D& A)
+{
+	return CVector2D(A.x + x, A.y + y);
+}
+
+CVector2D CVector2D::operator+=(CVector2D & A)
+{
+	x = x + A.x;
+	y = y + A.y;
+
+	return (*this);
+}
+
+CVector2D CVector2D::operator-(CVector2D& A)
+{
+	return CVector2D(x - A.x, y - A.y);
+}
+
+float CVector2D::Dot(CVector2D &A)
+{
+	return A.x*x + A.y*y;
+}
+
+float CVector2D::Truncate(float maxValue)
+{
+	if (Magnitude() > maxValue)
+	{
+		return maxValue;
+	}
+	else if (Magnitude() < 0) {
+		return 0.0f;
+	}
+	return Magnitude();
+}
+
+float CVector2D::Magnitude()
+{
+	return sqrt(Dot((*this)));
+}
+CVector2D CVector2D::Normalize()
+{
+	float magnitude = Magnitude();
+	if (magnitude)
+	{
+		return (*this) / magnitude;
+	}
+	return CVector2D(0, 0);
 }

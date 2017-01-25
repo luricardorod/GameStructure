@@ -2,10 +2,16 @@
 //
 
 #include "stdafx.h"
-
+#include "CBoid.h"
 
 int main()
 {
+	CBoid lu;
+	while (true)
+	{
+	lu.Update(.5);
+
+	}
     return 0;
 }
 

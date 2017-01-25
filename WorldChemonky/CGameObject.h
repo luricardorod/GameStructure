@@ -11,6 +11,7 @@ public:
 	virtual void Render();
 
   //Falta los constructores
-	~CGameObject(); //TODOS los destructores en clases derivables deben ser virtuales
+	virtual ~CGameObject(); //TODOS los destructores en clases derivables deben ser virtuales
+	CGameObject();
 };
 

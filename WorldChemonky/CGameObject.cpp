@@ -16,3 +16,11 @@ void CGameObject::Update(float delta)
 void CGameObject::Render()
 {
 }
+
+CGameObject::~CGameObject()
+{
+}
+
+CGameObject::CGameObject()
+{
+}
