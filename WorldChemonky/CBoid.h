@@ -1,5 +1,8 @@
 #include "Cvector2D.h";
 #include "CGameObject.h"
+#include "CObstacle.h"
+#include <memory>
+#include <vector>
 
 #define FORCESEEK 1
 #define FORCEFLEE 1
@@ -9,15 +12,17 @@
 #define FORCEWANDER1 1
 #define FORCEWANDER2 1
 #define RADIUSARRIVE 1
+#define STRONGFORCE 10000
+#define OFFSETAVOIDANCE 1
 
 class CBoid:public CGameObject
 {
 private:
-	CVector2D m_Cvec2dDirection;
-	CVector2D m_Cvec2dPosition;
+	CVector2D m_CVec2Direction;
 	float m_fVelocity;
 	float m_fMaxSpeed;
-
+	std::shared_ptr<std::vector<CObstacle>> m_pObstacleList;
+	float m_fRadiusSizeBoid;
 public:
 	void Init();
 	void Destroy();
@@ -31,6 +36,9 @@ public:
 	CVector2D Evade(CVector2D position, CVector2D direction, float velocity, float timePrediction, float radiusOfForceAplication, float magnitudeForce);
 	CVector2D Wander1(CVector2D SizeWorld, float radiusArrival, float timeLimitSeek, float delta, float magnitudeForce);
 	CVector2D Wander2(float offset,float radiusNextPoint, float visionAngle, float magnitudeForce);
+	CVector2D ObstacleAvoidance1();
+	CVector2D ObstacleAvoidance2();
+
 	
 	CBoid();
 	virtual ~CBoid();

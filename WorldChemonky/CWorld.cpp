@@ -5,29 +5,29 @@
 void CWorld::Init()
 {
   //Use autos o iteradores c++11
-	for (list<CGameObject*>::iterator gameObject = gameObjects.begin(); gameObject != gameObjects.end(); gameObject++) {
-		(*gameObject)->Init();
+	for (auto &gameObject : *m_pGameObjects) {
+		gameObject->Init();
 	}
 }
 
 void CWorld::Destroy()
 {
-	for (list<CGameObject*>::iterator gameObject = gameObjects.begin(); gameObject != gameObjects.end(); gameObject++) {
-		(*gameObject)->Destroy();
+	for (auto &gameObject : *m_pGameObjects) {
+		gameObject->Destroy();
 	}
 }
 
 void CWorld::Update(float delta)
 {
-	for (list<CGameObject*>::iterator gameObject = gameObjects.begin(); gameObject != gameObjects.end(); gameObject++) {
-		(*gameObject)->Update(delta);
+	for (auto &gameObject : *m_pGameObjects) {
+		gameObject->Update(delta);
 	}
 }
 
 void CWorld::Render()
 {
-	for (list<CGameObject*>::iterator gameObject = gameObjects.begin(); gameObject != gameObjects.end(); gameObject++) {
-		(*gameObject)->Render();
+	for (auto &gameObject : *m_pGameObjects) {
+		gameObject->Render();
 	}
 }
 

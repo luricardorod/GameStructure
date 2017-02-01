@@ -1,24 +1,18 @@
 #include "stdafx.h"
 #include "CGameObject.h"
 
-void CGameObject::Init()
-{
-}
-
-void CGameObject::Destroy()
-{
-}
-
-void CGameObject::Update(float delta)
-{
-}
-
-void CGameObject::Render()
-{
-}
-
 CGameObject::~CGameObject()
 {
+}
+
+void CGameObject::SetPosition(CVector2D position)
+{
+	m_CVec2Position = position;
+}
+
+CVector2D CGameObject::GetPosition()
+{
+	return m_CVec2Position;
 }
 
 CGameObject::CGameObject()

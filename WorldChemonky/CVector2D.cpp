@@ -31,10 +31,10 @@ CVector2D CVector2D::operator* (float s)
 	return CVector2D(x*s, y*s);
 }
 
-CVector2D CVector2D::operator*=(float s)
+CVector2D & CVector2D::operator*=(float s)
 {
-	x = x*s;
-	y = y*s;
+	x *= s;
+	y *= s;
 	return (*this);
 }
 
@@ -48,11 +48,10 @@ CVector2D CVector2D::operator+(CVector2D& A)
 	return CVector2D(A.x + x, A.y + y);
 }
 
-CVector2D CVector2D::operator+=(CVector2D & A)
+CVector2D & CVector2D::operator+=(CVector2D & A)
 {
-	x = x + A.x;
-	y = y + A.y;
-
+	x += A.x;
+	y += A.y;
 	return (*this);
 }
 

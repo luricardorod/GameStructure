@@ -7,9 +7,11 @@
 int main()
 {
 	CBoid lu;
-	while (true)
+	int counter = 0;
+	while (counter < 100)
 	{
-	lu.Update(.5);
+		counter++;
+	lu.Update(1);
 
 	}
     return 0;
