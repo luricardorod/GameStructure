@@ -21,7 +21,7 @@ private:
 	CVector2D m_CVec2Direction;
 	float m_fVelocity;
 	float m_fMaxSpeed;
-	std::vector<std::shared_ptr<CObstacle>>* m_pObstacleList;
+	std::vector<std::shared_ptr<CGameObject>>* m_pObstacleList;
 	float m_fRadiusSizeBoid;
 public:
 	void Init();
@@ -40,7 +40,7 @@ public:
 	CVector2D ObstacleAvoidance1();
 	CVector2D ObstacleAvoidance2();
 
-	void SetListObstacle(std::vector<std::shared_ptr<CObstacle>>*);
+	void SetListObstacle(std::vector<std::shared_ptr<CGameObject>>*);
 	CBoid();
 	virtual ~CBoid();
 };

@@ -7,25 +7,36 @@
 void CWorld::Init()
 {
 
-	for (int i = 0; i < 20; i++)
+	for (int i = 0; i < 50; i++)
 	{
-		CObstacle cobstacle;
-		m_pGameObjects.push_back(std::make_shared<CObstacle>(cobstacle));
-		m_pObstacles.push_back(std::make_shared<CObstacle>(cobstacle));
+		m_pGameObjects.push_back(std::make_shared<CObstacle>());
+		m_pObstacles.push_back(m_pGameObjects.back());
 	}
+
 	CBoid cboid;
 	cboid.SetListObstacle(&m_pObstacles);
 	m_pGameObjects.push_back(std::make_shared<CBoid>(cboid));
+
 	srand(time(NULL));
 	for (auto &gameObject : m_pGameObjects) {
 
 		gameObject->Init();
 		float x = ((rand() % 201) / 100.0f) - 1.0f;
 		float y = ((rand() % 201) / 100.0f) - 1.0f;
-		Sleep(100);
+		//Sleep(100);
 		CVector2D randomPosition(x, y);
 		gameObject->SetPosition(randomPosition);
 	}
+	/*CVector2D randomPosition(0, 0);
+	m_pGameObjects.push_back(std::make_shared<CObstacle>());
+	m_pObstacles.push_back(m_pGameObjects.back());
+	m_pGameObjects.back()->Init();
+	m_pGameObjects.back()->SetPosition(randomPosition);*/
+	CBoid cboid1;
+	cboid1.SetListObstacle(&m_pObstacles);
+	m_pGameObjects.push_back(std::make_shared<CBoid>(cboid1));
+	m_pGameObjects.back()->Init();
+	m_pGameObjects.back()->SetPosition(CVector2D(-1,-.5f));
 	printf("ol");
 }
 

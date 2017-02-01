@@ -10,7 +10,7 @@ void CBoid::Init() {
 	m_CVec2Position = CVector2D(0, 0);
 	m_fVelocity = .8f;
 	m_fMaxSpeed = .1f;
-	m_fRadiusSizeBoid = 1;
+	m_fRadiusSizeBoid = .05f;
 }
 
 void CBoid::Destroy() {
@@ -18,11 +18,11 @@ void CBoid::Destroy() {
 
 void CBoid::Update(float delta) {
 	CVector2D SteeringForce(0, 0);
-	CVector2D target(0, 1);
+	CVector2D target(1, 1);
 
 	//SteeringForce += Wander2(2, 5, 1.15, FORCESEEK);
 	SteeringForce += Seek(target, FORCESEEK);
-	SteeringForce += ObstacleAvoidance1();
+	SteeringForce += ObstacleAvoidance2();
 	m_fVelocity = SteeringForce.Truncate(m_fMaxSpeed) * delta;
 	m_CVec2Direction = (m_CVec2Direction + SteeringForce.Normalize()).Normalize();
 	m_CVec2Position += m_CVec2Direction * m_fVelocity;
@@ -119,14 +119,14 @@ CVector2D CBoid::Wander2(float offset, float radiusNextPoint, float visionAngle,
 
 CVector2D CBoid::ObstacleAvoidance1()
 {
-	CVector2D finalFuturePosition = m_CVec2Position + m_CVec2Direction * m_fVelocity * .1f;
+	CVector2D finalFuturePosition = m_CVec2Position + m_CVec2Direction * m_fVelocity * .01f;
 	CVector2D halfFuturePosition = finalFuturePosition * 0.5f;
 
 	float distanceMoreClose = 10000;
 	CVector2D obstacleForce = CVector2D(0, 0);
 
 	for (auto &obstacle : *m_pObstacleList) {
-		float addRadius = (*obstacle).GetRadius() + m_fRadiusSizeBoid;
+		float addRadius = std::dynamic_pointer_cast<CObstacle>(obstacle)->GetRadius() + m_fRadiusSizeBoid;
 		CVector2D obstaclePosition = (*obstacle).GetPosition();
 
 		if ((obstaclePosition - m_CVec2Position).Magnitude() < addRadius)
@@ -134,6 +134,7 @@ CVector2D CBoid::ObstacleAvoidance1()
 			if (distanceMoreClose > (obstaclePosition - m_CVec2Position).Magnitude())
 			{
 				obstacleForce = (m_CVec2Position - obstaclePosition).Normalize() * STRONGFORCE;
+				distanceMoreClose = (obstaclePosition - m_CVec2Position).Magnitude();
 			}
 		}
 		if ((obstaclePosition - halfFuturePosition).Magnitude() < addRadius)
@@ -141,6 +142,7 @@ CVector2D CBoid::ObstacleAvoidance1()
 			if (distanceMoreClose > (obstaclePosition - halfFuturePosition).Magnitude())
 			{
 				obstacleForce = (halfFuturePosition - obstaclePosition).Normalize() * STRONGFORCE;
+				distanceMoreClose = (obstaclePosition - halfFuturePosition).Magnitude();
 			}
 		}
 		if ((obstaclePosition - finalFuturePosition).Magnitude() < addRadius)
@@ -148,12 +150,9 @@ CVector2D CBoid::ObstacleAvoidance1()
 			if (distanceMoreClose > (obstaclePosition - finalFuturePosition).Magnitude())
 			{
 				obstacleForce = (finalFuturePosition - obstaclePosition).Normalize() * STRONGFORCE;
+				distanceMoreClose = (obstaclePosition - finalFuturePosition).Magnitude();
 			}
 		}
-	}
-	if (distanceMoreClose == 10000)
-	{
-		return obstacleForce;
 	}
 	return obstacleForce;
 }
@@ -161,12 +160,19 @@ CVector2D CBoid::ObstacleAvoidance1()
 CVector2D CBoid::ObstacleAvoidance2()
 {
 	CVector2D perpendicularDirection = CVector2D(-m_CVec2Direction.y, m_CVec2Direction.x).Normalize();
-	CVector2D lastMiddlePoint = m_CVec2Position + m_CVec2Direction*m_fVelocity *OFFSETAVOIDANCE;
+	CVector2D lastMiddlePoint = m_CVec2Position + m_CVec2Direction*m_fVelocity *80.0f;
 	CVector2D firstMiddlePoint = m_CVec2Position - (m_CVec2Direction * m_fRadiusSizeBoid);
 	CVector2D firstTopPoint = firstMiddlePoint + perpendicularDirection * m_fRadiusSizeBoid;
 	CVector2D firstBotPoint = firstMiddlePoint - perpendicularDirection * m_fRadiusSizeBoid;
 	CVector2D lastTopPoint = lastMiddlePoint + perpendicularDirection * m_fRadiusSizeBoid;
 	CVector2D lastBotPoint = lastMiddlePoint - perpendicularDirection * m_fRadiusSizeBoid;
+	printf("radio=%f\n", m_fRadiusSizeBoid);
+	printf("Topleftx=%f y=%f \n", m_CVec2Position.x, m_CVec2Position.y);
+
+	printf("Topleftx=%f y=%f \n", firstTopPoint.x, firstTopPoint.y);
+	printf("toprightx=%f y=%f \n", lastTopPoint.x, lastTopPoint.y);
+	printf("botlrftx=%f y=%f \n", firstBotPoint.x, firstBotPoint.y);
+	printf("botrightx=%f y=%f \n", lastBotPoint.x, lastBotPoint.y);
 
 	CVector2D topRectangle = lastTopPoint - firstTopPoint;
 	CVector2D botRectangle = lastBotPoint - firstBotPoint;
@@ -178,7 +184,7 @@ CVector2D CBoid::ObstacleAvoidance2()
 
 	for (auto &obstacle : *m_pObstacleList) {
 		CVector2D obstaclePosition = (*obstacle).GetPosition();
-		float obstacleRadius = (*obstacle).GetRadius();
+		float obstacleRadius = std::dynamic_pointer_cast<CObstacle>(obstacle)->GetRadius();
 		//TopVectorCollision
 		CVector2D obstacleDistance = obstaclePosition - firstTopPoint;
 		float projection = obstacleDistance.Dot(topRectangle) / topRectangle.Magnitude();
@@ -198,9 +204,11 @@ CVector2D CBoid::ObstacleAvoidance2()
 			if (distanceMoreClose > (m_CVec2Position - pointColision).Magnitude())
 			{
 				obstacleForce = (pointColision - obstaclePosition).Normalize() * STRONGFORCE;
+				distanceMoreClose = (m_CVec2Position - pointColision).Magnitude();
 			}
 		}
 		//BotVectorCollision
+		
 		obstacleDistance = obstaclePosition - firstBotPoint;
 		projection = obstacleDistance.Dot(botRectangle) / botRectangle.Magnitude();
 		if (projection < 0)
@@ -218,8 +226,9 @@ CVector2D CBoid::ObstacleAvoidance2()
 			if (distanceMoreClose > (m_CVec2Position - pointColision).Magnitude())
 			{
 				obstacleForce = (pointColision - obstaclePosition).Normalize() * STRONGFORCE;
+				distanceMoreClose = (m_CVec2Position - pointColision).Magnitude();
 			}
-		}
+		}/*
 		//LeftVectorCollision
 		//obstacleDistance = obstaclePosition - firstBotPoint;
 		projection = obstacleDistance.Dot(leftRectangle) / leftRectangle.Magnitude();
@@ -238,6 +247,8 @@ CVector2D CBoid::ObstacleAvoidance2()
 			if (distanceMoreClose > (m_CVec2Position - pointColision).Magnitude())
 			{
 				obstacleForce = (pointColision - obstaclePosition).Normalize() * STRONGFORCE;
+				distanceMoreClose = (m_CVec2Position - pointColision).Magnitude();
+
 			}
 		}
 		//RightVectorCollision
@@ -258,13 +269,11 @@ CVector2D CBoid::ObstacleAvoidance2()
 			if (distanceMoreClose > (m_CVec2Position - pointColision).Magnitude())
 			{
 				obstacleForce = (pointColision - obstaclePosition).Normalize() * STRONGFORCE;
+				distanceMoreClose = (m_CVec2Position - pointColision).Magnitude();
 			}
-		}
+		}*/
 	}
-	if (distanceMoreClose == 10000)
-	{
-		return obstacleForce;
-	}
+
 	return obstacleForce;
 }
 
@@ -287,7 +296,7 @@ CVector2D CBoid::Wander1(CVector2D SizeWorld, float radiusArrival, float timeLim
 	return Seek(randomTarget, magnitudeForce);
 }
 
-void CBoid::SetListObstacle(std::vector<std::shared_ptr<CObstacle>>* obstacleList)
+void CBoid::SetListObstacle(std::vector<std::shared_ptr<CGameObject>>* obstacleList)
 {
 	m_pObstacleList = obstacleList;
 	printf("lu");

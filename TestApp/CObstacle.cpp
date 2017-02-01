@@ -12,7 +12,7 @@ void CObstacle::SetRadius(float radius)
 
 void CObstacle::Init()
 {
-	m_Radius = 1;
+	m_Radius = .06f;
 }
 
 void CObstacle::Destroy()
