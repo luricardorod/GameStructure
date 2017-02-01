@@ -2,6 +2,7 @@
 #include "PrimitiveManager.h"
 #include "TriangleGL.h"
 #include "CubeGL.h"
+#include "CuadGL.h"
 
 PrimitiveBase*	PrimitiveManager::GetPrimitive(unsigned int index) {
 	if (index >= primitives.size())
@@ -15,6 +16,13 @@ int  PrimitiveManager::CreateTriangle() {
 	primitive->Create();
 	primitives.push_back(primitive);
 	return (int)(primitives.size()-1);
+}
+
+int  PrimitiveManager::CreateCuad() {
+	PrimitiveBase *primitive = new CuadGl();
+	primitive->Create();
+	primitives.push_back(primitive);
+	return (int)(primitives.size() - 1);
 }
 
 int	 PrimitiveManager::CreateCube(){

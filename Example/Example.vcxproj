@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="BaseDriver.h" />
     <ClInclude Include="Core.h" />
+    <ClInclude Include="CuadGL.h" />
     <ClInclude Include="CubeGL.h" />
     <ClInclude Include="GLDriver.h" />
     <ClInclude Include="InputManager.h" />
@@ -34,6 +35,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core.cpp" />
+    <ClCompile Include="CuadGL.cpp" />
     <ClCompile Include="CubeGL.cpp" />
     <ClCompile Include="GLDriver.cpp" />
     <ClCompile Include="InputManager.cpp" />

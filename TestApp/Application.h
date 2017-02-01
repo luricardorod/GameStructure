@@ -26,6 +26,7 @@ public:
 	PrimitiveManager PrimitiveMgr;
 	PrimitiveInst	Cubes[10];
 	PrimitiveInst	Triangles[60];
+	PrimitiveInst   Cuads[60];
 
 	D3DXVECTOR3		Position;
 	D3DXVECTOR3		Orientation;

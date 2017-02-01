@@ -11,7 +11,8 @@ void TestApp::CreateAssets() {
 	PrimitiveMgr.SetVP(&VP);
 	int indexTriangle = PrimitiveMgr.CreateTriangle();
 	int indexCube = PrimitiveMgr.CreateCube();
-	int counterCubes = 0;
+	int indexCuad = PrimitiveMgr.CreateCuad();
+	int counterCuads = 0;
 	int counterTriangles = 0;
 	for (auto &gameObject : m_WorldChemonky.m_pGameObjects) {
 		unsigned short type = gameObject->GetClassId();
@@ -23,6 +24,12 @@ void TestApp::CreateAssets() {
 			counterTriangles++;
 			break;
 		case CLASSOBSTACLE:
+			
+			Cuads[counterCuads].CreateInstance(PrimitiveMgr.GetPrimitive(indexCuad), &VP);
+			(*gameObject).m_PrimitiveInstance = &Cuads[counterCuads];
+			counterCuads++;
+			
+			/*
 			Triangles[counterTriangles].CreateInstance(PrimitiveMgr.GetPrimitive(indexTriangle), &VP);
 			(*gameObject).m_PrimitiveInstance = &Triangles[counterTriangles];
 			counterTriangles++;

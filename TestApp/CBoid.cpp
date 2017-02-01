@@ -22,7 +22,7 @@ void CBoid::Update(float delta) {
 
 	//SteeringForce += Wander2(2, 5, 1.15, FORCESEEK);
 	SteeringForce += Seek(target, FORCESEEK);
-	SteeringForce += ObstacleAvoidance2();
+	SteeringForce += ObstacleAvoidance1();
 	m_fVelocity = SteeringForce.Truncate(m_fMaxSpeed) * delta;
 	m_CVec2Direction = (m_CVec2Direction + SteeringForce.Normalize()).Normalize();
 	m_CVec2Position += m_CVec2Direction * m_fVelocity;

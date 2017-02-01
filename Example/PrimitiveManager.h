@@ -11,6 +11,8 @@ public:
 		pVP = vp;
 	}
 	int  CreateTriangle();
+	int  CreateCuad();
+
 	int	 CreateCube();
 
 	void DrawPrimitives();
