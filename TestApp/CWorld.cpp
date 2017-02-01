@@ -7,11 +7,15 @@
 void CWorld::Init()
 {
 
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 20; i++)
 	{
-		m_pGameObjects.push_back(std::make_shared<CObstacle>());
+		CObstacle cobstacle;
+		m_pGameObjects.push_back(std::make_shared<CObstacle>(cobstacle));
+		m_pObstacles.push_back(std::make_shared<CObstacle>(cobstacle));
 	}
-	m_pGameObjects.push_back(std::make_shared<CBoid>());
+	CBoid cboid;
+	cboid.SetListObstacle(&m_pObstacles);
+	m_pGameObjects.push_back(std::make_shared<CBoid>(cboid));
 	srand(time(NULL));
 	for (auto &gameObject : m_pGameObjects) {
 
@@ -22,8 +26,7 @@ void CWorld::Init()
 		CVector2D randomPosition(x, y);
 		gameObject->SetPosition(randomPosition);
 	}
-	printf("lo");
-
+	printf("ol");
 }
 
 void CWorld::Destroy()

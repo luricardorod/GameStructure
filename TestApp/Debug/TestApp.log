@@ -1,2 +1,10 @@
-﻿  TestApp.vcxproj -> E:\UAD\5to\ia\GameStructure\bin\TestApp.exe
-  TestApp.vcxproj -> E:\UAD\5to\ia\GameStructure\bin\TestApp.pdb (Full PDB)
+﻿  CWorld.cpp
+c:\users\bluemonkey\desktop\5t0\ia\gamestructure\testapp\cboid.h(1): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+c:\users\bluemonkey\desktop\5t0\ia\gamestructure\testapp\cworld.cpp(19): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  CBoid.cpp
+c:\users\bluemonkey\desktop\5t0\ia\gamestructure\testapp\cboid.h(1): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+c:\users\bluemonkey\desktop\5t0\ia\gamestructure\testapp\cboid.cpp(7): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+c:\users\bluemonkey\desktop\5t0\ia\gamestructure\testapp\cboid.cpp(164): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  Generando código...
+  TestApp.vcxproj -> C:\Users\blueMonkey\Desktop\5t0\ia\GameStructure\bin\TestApp.exe
+  TestApp.vcxproj -> C:\Users\blueMonkey\Desktop\5t0\ia\GameStructure\bin\TestApp.pdb (Full PDB)
