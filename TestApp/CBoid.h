@@ -9,7 +9,7 @@
 #define FORCEARRIVE 1
 #define FORCEPERSUE 1
 #define FORCEEVADE 1
-#define FORCEWANDER1 1
+#define FORCEWANDER1 25
 #define FORCEWANDER2 1
 #define RADIUSARRIVE 1
 #define STRONGFORCE 10000
@@ -37,6 +37,7 @@ public:
 	CVector2D Evade(CVector2D position, CVector2D direction, float velocity, float timePrediction, float radiusOfForceAplication, float magnitudeForce);
 	CVector2D Wander1(CVector2D SizeWorld, float radiusArrival, float timeLimitSeek, float delta, float magnitudeForce);
 	CVector2D Wander2(float offset, float radiusNextPoint, float visionAngle, float magnitudeForce);
+	CVector2D Circle(float radioOrbita, float radioArrive);
 	CVector2D ObstacleAvoidance1();
 	CVector2D ObstacleAvoidance2();
 

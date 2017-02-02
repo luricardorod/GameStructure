@@ -9,8 +9,8 @@ void CBoid::Init() {
 	m_CVec2Direction = m_CVec2Direction.Normalize();
 	m_CVec2Position = CVector2D(0, 0);
 	m_fVelocity = .8f;
-	m_fMaxSpeed = .1f;
-	m_fRadiusSizeBoid = .05f;
+	m_fMaxSpeed = .5f;
+	m_fRadiusSizeBoid = .01f;
 }
 
 void CBoid::Destroy() {
@@ -18,17 +18,13 @@ void CBoid::Destroy() {
 
 void CBoid::Update(float delta) {
 	CVector2D SteeringForce(0, 0);
-	CVector2D target(1, 1);
-
-	//SteeringForce += Wander2(2, 5, 1.15, FORCESEEK);
-	SteeringForce += Seek(target, FORCESEEK);
+	
+	SteeringForce += Circle(.5f, .05f);
 	SteeringForce += ObstacleAvoidance1();
 	m_fVelocity = SteeringForce.Truncate(m_fMaxSpeed) * delta;
 	m_CVec2Direction = (m_CVec2Direction + SteeringForce.Normalize()).Normalize();
 	m_CVec2Position += m_CVec2Direction * m_fVelocity;
 
-	//printf("x=%f \n y=%f \n", m_CVec2Position.x, m_CVec2Position.y);
-	printf("%f\n", m_CVec2Position.y);
 
 	m_PrimitiveInstance->TranslateAbsolute(m_CVec2Position.x, m_CVec2Position.y, 0);
 	m_PrimitiveInstance->Update();
@@ -117,9 +113,27 @@ CVector2D CBoid::Wander2(float offset, float radiusNextPoint, float visionAngle,
 	return Seek(target, magnitudeForce);
 }
 
+CVector2D CBoid::Circle(float radioOrbita, float radioArrive)
+{
+	static float delta = .01f;
+	static CVector2D target(radioOrbita*cosf(delta), radioOrbita * sinf(delta));
+
+	CVector2D seekForce = Seek(target, FORCESEEK);
+
+	float distance = (target - m_CVec2Position).Magnitude();
+
+	if (distance < radioArrive)
+	{
+		delta += .01;
+		target.x = radioOrbita*cosf(delta);
+		target.y = radioOrbita*sinf(delta);
+	}
+	return Seek(target, FORCESEEK);
+}
+
 CVector2D CBoid::ObstacleAvoidance1()
 {
-	CVector2D finalFuturePosition = m_CVec2Position + m_CVec2Direction * m_fVelocity * .01f;
+	CVector2D finalFuturePosition = m_CVec2Position + m_CVec2Direction * m_fVelocity * 1;
 	CVector2D halfFuturePosition = finalFuturePosition * 0.5f;
 
 	float distanceMoreClose = 10000;
@@ -166,13 +180,13 @@ CVector2D CBoid::ObstacleAvoidance2()
 	CVector2D firstBotPoint = firstMiddlePoint - perpendicularDirection * m_fRadiusSizeBoid;
 	CVector2D lastTopPoint = lastMiddlePoint + perpendicularDirection * m_fRadiusSizeBoid;
 	CVector2D lastBotPoint = lastMiddlePoint - perpendicularDirection * m_fRadiusSizeBoid;
-	printf("radio=%f\n", m_fRadiusSizeBoid);
+	/*printf("radio=%f\n", m_fRadiusSizeBoid);
 	printf("Topleftx=%f y=%f \n", m_CVec2Position.x, m_CVec2Position.y);
 
 	printf("Topleftx=%f y=%f \n", firstTopPoint.x, firstTopPoint.y);
 	printf("toprightx=%f y=%f \n", lastTopPoint.x, lastTopPoint.y);
 	printf("botlrftx=%f y=%f \n", firstBotPoint.x, firstBotPoint.y);
-	printf("botrightx=%f y=%f \n", lastBotPoint.x, lastBotPoint.y);
+	printf("botrightx=%f y=%f \n", lastBotPoint.x, lastBotPoint.y);*/
 
 	CVector2D topRectangle = lastTopPoint - firstTopPoint;
 	CVector2D botRectangle = lastBotPoint - firstBotPoint;
@@ -228,7 +242,7 @@ CVector2D CBoid::ObstacleAvoidance2()
 				obstacleForce = (pointColision - obstaclePosition).Normalize() * STRONGFORCE;
 				distanceMoreClose = (m_CVec2Position - pointColision).Magnitude();
 			}
-		}/*
+		}
 		//LeftVectorCollision
 		//obstacleDistance = obstaclePosition - firstBotPoint;
 		projection = obstacleDistance.Dot(leftRectangle) / leftRectangle.Magnitude();
@@ -271,7 +285,7 @@ CVector2D CBoid::ObstacleAvoidance2()
 				obstacleForce = (pointColision - obstaclePosition).Normalize() * STRONGFORCE;
 				distanceMoreClose = (m_CVec2Position - pointColision).Magnitude();
 			}
-		}*/
+		}
 	}
 
 	return obstacleForce;
@@ -299,7 +313,6 @@ CVector2D CBoid::Wander1(CVector2D SizeWorld, float radiusArrival, float timeLim
 void CBoid::SetListObstacle(std::vector<std::shared_ptr<CGameObject>>* obstacleList)
 {
 	m_pObstacleList = obstacleList;
-	printf("lu");
 }
 
 CBoid::CBoid()
