@@ -62,8 +62,13 @@ void TestApp::OnUpdate() {
 	DtTimer.Update();
 
 	OnInput();
-
-	m_WorldChemonky.Update(DtTimer.GetDTSecs());
+	static float time = 0;
+	time += DtTimer.GetDTSecs();
+	if (time > 4/60.0f)
+	{
+		m_WorldChemonky.Update(DtTimer.GetDTSecs());
+		time = 0;
+	}
 	/*Cubes[0].TranslateAbsolute(Position.x, Position.y, Position.z);
 	Cubes[0].RotateXAbsolute(Orientation.x);
 	Cubes[0].RotateYAbsolute(Orientation.y);

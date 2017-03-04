@@ -14,6 +14,7 @@
 #define RADIUSARRIVE 1
 #define STRONGFORCE 10000
 #define OFFSETAVOIDANCE .1
+#define RADIOFLOCKING .5
 
 class CBoid :public CGameObject
 {
@@ -21,14 +22,19 @@ private:
 	CVector2D m_CVec2Direction;
 	float m_fVelocity;
 	float m_fMaxSpeed;
-	std::vector<std::shared_ptr<CGameObject>>* m_pObstacleList;
+	std::vector<std::shared_ptr<CGameObject>>* m_pGameObjects;
+	std::vector<CVector2D> m_pPath;
+	unsigned short m_usPathIndex;
+
 	float m_fRadiusSizeBoid;
 public:
+	bool flag1 = true, flag2 = true;
 	void Init();
 	void Destroy();
 	void Update(float delta);
 	void Render();
-	virtual unsigned short GetClassId();
+	bool m_bFlagPatrol2;
+	unsigned short GetClassId();
 
 	CVector2D Seek(CVector2D position, float magnitudeForce);
 	CVector2D Flee(CVector2D position, float radiusOfForceAplication, float magnitudeForce);
@@ -40,8 +46,16 @@ public:
 	CVector2D Circle(float radioOrbita, float radioArrive);
 	CVector2D ObstacleAvoidance1();
 	CVector2D ObstacleAvoidance2();
+	CVector2D FollowPath1(float magnitudeForce, float radioArrive, unsigned short typePatrol);
+	CVector2D FollowPath2(float magnitudeForce, float radioArrive, float distanceMaxPath, unsigned short typePatrol);
 
-	void SetListObstacle(std::vector<std::shared_ptr<CGameObject>>*);
+	CVector2D Direction();
+	CVector2D Separation(float magnitudeForce);
+	CVector2D Cohesion(float magnitudeForce);
+	CVector2D Flocking(float magnitudForce, float magnitudSeparationForce, float magnitudCoheisonForce);
+
+	void SetListObstacle(std::vector<std::shared_ptr<CGameObject>>* gameObjectsList);
+	CVector2D GetDirection();
 	CBoid();
 	virtual ~CBoid();
 };

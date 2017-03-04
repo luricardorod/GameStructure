@@ -1,7 +1,7 @@
 #include "CVector2D.h"
 #include <cmath>
 
-CVector2D::CVector2D(CVector2D &V)
+CVector2D::CVector2D(const CVector2D &V)
 {
 	x = V.x;
 	y = V.y;
@@ -40,6 +40,13 @@ CVector2D & CVector2D::operator*=(float s)
 CVector2D CVector2D::operator/ (float s)
 {
 	return (*this)*(1 / s);
+}
+
+CVector2D & CVector2D::operator/=(float s)
+{
+	x /= s;
+	y /= s;
+	return (*this);
 }
 
 CVector2D CVector2D::operator+(CVector2D& A)

@@ -28,23 +28,36 @@ void CWorld::Init()
 		gameObject->SetPosition(randomPosition);
 	}*/
 	m_pGameObjects.push_back(std::make_shared<CObstacle>());
-	m_pObstacles.push_back(m_pGameObjects.back());
 	m_pGameObjects.back()->Init();
 	m_pGameObjects.back()->SetPosition(CVector2D(0, 0.5f));
+	
 	m_pGameObjects.push_back(std::make_shared<CObstacle>());
-	m_pObstacles.push_back(m_pGameObjects.back());
 	m_pGameObjects.back()->Init();
 	m_pGameObjects.back()->SetPosition(CVector2D(-0.25f, -0.43f));
+
 	m_pGameObjects.push_back(std::make_shared<CObstacle>());
-	m_pObstacles.push_back(m_pGameObjects.back());
 	m_pGameObjects.back()->Init();
 	m_pGameObjects.back()->SetPosition(CVector2D(0.25f, -0.43f));
+
 	CBoid cboid1;
-	cboid1.SetListObstacle(&m_pObstacles);
+	cboid1.SetListObstacle(&m_pGameObjects);
 	m_pGameObjects.push_back(std::make_shared<CBoid>(cboid1));
 	m_pGameObjects.back()->Init();
 	m_pGameObjects.back()->SetPosition(CVector2D(.5f, 0));
-	printf("ol");
+	std::dynamic_pointer_cast<CBoid>(m_pGameObjects.back())->flag1 = false;
+	CBoid cboid2;
+	cboid2.SetListObstacle(&m_pGameObjects);
+	m_pGameObjects.push_back(std::make_shared<CBoid>(cboid2));
+	m_pGameObjects.back()->Init();
+	m_pGameObjects.back()->SetPosition(CVector2D(.5f, 0));
+	std::dynamic_pointer_cast<CBoid>(m_pGameObjects.back())->flag2 = false;
+
+
+	/*CBoid cboid3;
+	cboid3.SetListObstacle(&m_pGameObjects);
+	m_pGameObjects.push_back(std::make_shared<CBoid>(cboid3));
+	m_pGameObjects.back()->Init();
+	m_pGameObjects.back()->SetPosition(CVector2D(.5f, -.5f));*/
 }
 
 void CWorld::Destroy()

@@ -45,7 +45,7 @@ public:
 	GLuint  matUniformLoc;
 #ifdef USE_VBO
 	triVertex		vertices[3];
-	unsigned short	indices[3];
+	unsigned short	indices[6];
 	GLuint			VB;
 	GLuint			IB;
 #else
