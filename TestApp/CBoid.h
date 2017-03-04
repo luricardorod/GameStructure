@@ -28,7 +28,7 @@ private:
 
 	float m_fRadiusSizeBoid;
 public:
-	bool flag1 = true, flag2 = true;
+	bool flag1 = false, flag2 = false;
 	void Init();
 	void Destroy();
 	void Update(float delta);
@@ -54,6 +54,7 @@ public:
 	CVector2D Cohesion(float magnitudeForce);
 	CVector2D Flocking(float magnitudForce, float magnitudSeparationForce, float magnitudCoheisonForce);
 
+	CVector2D FollowTheLeader(CGameObject* leader, float repulsiveForceLeader, float radiusFlee, float fleeForce, float distance, float seekForce, float separetionForce, float cohesionForce);
 	void SetListObstacle(std::vector<std::shared_ptr<CGameObject>>* gameObjectsList);
 	CVector2D GetDirection();
 	CBoid();

@@ -37,12 +37,12 @@ void CBoid::Update(float delta) {
 	if (flag2)
 	{
 		//SteeringForce += FollowPath2(10.0f, .1f, .05f, 2);
-		SteeringForce += FollowPath1(10.0f, .1f, 2);
-
+		//SteeringForce += FollowPath1(10.0f, .1f, 2);
+		SteeringForce += FollowTheLeader(m_pGameObjects->begin()->get(), 5, .2f, 5, .1f, 20, 20, 30);
 	}
 	//SteeringForce += Wander2(5.0f, .3f, 375, .1);
 	SteeringForce += ObstacleAvoidance1();
-	SteeringForce += Flocking(10.0f, 10.0f, 10.0f);
+	//SteeringForce += Flocking(10.0f, 10.0f, 10.0f);
 	m_fVelocity = SteeringForce.Truncate(m_fMaxSpeed) * delta;
 	m_CVec2Direction = (m_CVec2Direction + SteeringForce.Normalize()).Normalize();
 	
@@ -463,6 +463,17 @@ CVector2D CBoid::Wander1(CVector2D SizeWorld, float radiusArrival, float timeLim
 		timeSeek = 0;
 	}
 	return Seek(randomTarget, magnitudeForce);
+}
+
+CVector2D CBoid::FollowTheLeader(CGameObject* leader, float repulsiveForceLeader, float radiusFlee, float fleeForce, float distance, float seekForce, float separetionForce, float cohesionForce)
+{
+	CVector2D targetSeek = leader->GetPosition() - static_cast<CBoid*>(leader)->GetDirection() * distance;
+	CVector2D finalForce = Seek(targetSeek, seekForce);
+	finalForce += Flee(leader->GetPosition(), radiusFlee, fleeForce);
+	finalForce += Separation(separetionForce);
+	finalForce += Cohesion(cohesionForce);
+	return finalForce;
+	return CVector2D();
 }
 
 void CBoid::SetListObstacle(std::vector<std::shared_ptr<CGameObject>>* gameObjectsList)
