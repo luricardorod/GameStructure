@@ -1,9 +1,3 @@
-﻿  CBoid.cpp
-e:\uad\5to\ia\gamestructure\testapp\cboid.h(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-e:\uad\5to\ia\gamestructure\testapp\cboid.cpp(7): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-e:\uad\5to\ia\gamestructure\testapp\cboid.cpp(150): warning C4305: '+=': truncation from 'double' to 'float'
-e:\uad\5to\ia\gamestructure\testapp\cboid.cpp(409): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-e:\uad\5to\ia\gamestructure\testapp\cboid.cpp(435): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-e:\uad\5to\ia\gamestructure\testapp\cboid.cpp(436): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+﻿  CBuild.cpp
   TestApp.vcxproj -> E:\UAD\5to\ia\GameStructure\bin\TestApp.exe
   TestApp.vcxproj -> E:\UAD\5to\ia\GameStructure\bin\TestApp.pdb (Full PDB)

@@ -153,19 +153,46 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="CAttack.cpp" />
+    <ClCompile Include="CBuild.cpp" />
+    <ClCompile Include="CDead.cpp" />
+    <ClCompile Include="CFaction.cpp" />
     <ClCompile Include="CBoid.cpp" />
+    <ClCompile Include="CFSM.cpp" />
     <ClCompile Include="CGameObject.cpp" />
+    <ClCompile Include="CGarrison.cpp" />
+    <ClCompile Include="CIdle.cpp" />
+    <ClCompile Include="CMoveTo.cpp" />
     <ClCompile Include="CObstacle.cpp" />
+    <ClCompile Include="CRecollect.cpp" />
+    <ClCompile Include="CRoting.cpp" />
+    <ClCompile Include="CTypes.cpp" />
+    <ClCompile Include="CUnits.cpp" />
     <ClCompile Include="CVector2D.cpp" />
+    <ClCompile Include="CWeaponType.cpp" />
     <ClCompile Include="CWorld.cpp" />
     <ClCompile Include="TestApp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="CAttack.h" />
+    <ClInclude Include="CBuild.h" />
+    <ClInclude Include="CDead.h" />
+    <ClInclude Include="CFaction.h" />
     <ClInclude Include="CBoid.h" />
+    <ClInclude Include="CFSM.h" />
     <ClInclude Include="CGameObject.h" />
+    <ClInclude Include="CGarrison.h" />
+    <ClInclude Include="CIdle.h" />
+    <ClInclude Include="CMoveTo.h" />
     <ClInclude Include="CObstacle.h" />
+    <ClInclude Include="CRecollect.h" />
+    <ClInclude Include="CRoting.h" />
+    <ClInclude Include="CStates.h" />
+    <ClInclude Include="CTypes.h" />
+    <ClInclude Include="CUnits.h" />
     <ClInclude Include="CVector2D.h" />
+    <ClInclude Include="CWeaponType.h" />
     <ClInclude Include="CWorld.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
