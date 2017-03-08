@@ -3,7 +3,7 @@
 #include "CObstacle.h"
 #include <stdlib.h>
 #include <time.h>
-
+#include "definitions.h"
 void CWorld::Init()
 {
 	/*
@@ -64,6 +64,12 @@ void CWorld::Init()
 	m_pGameObjects.push_back(std::make_shared<CBoid>(cboid3));
 	m_pGameObjects.back()->Init();
 	m_pGameObjects.back()->SetPosition(CVector2D(.5f, -.5f));*/
+
+	m_aTypes = new CTypes[TYPES_SIZE];
+	m_aFactions = new CFaction[FACTIONS_SIZE];
+	m_aWeapons = new CWeaponType[WEAPONS_SIZE];
+
+
 }
 
 void CWorld::Destroy()
@@ -85,6 +91,21 @@ void CWorld::Render()
 	for (auto &gameObject : m_pGameObjects) {
 		gameObject->Render();
 	}
+}
+
+CTypes* CWorld::GetType(int id)
+{
+	return &m_aTypes[id];
+}
+
+CFaction* CWorld::GetFaction(int id)
+{
+	return &m_aFactions[id];
+}
+
+CWeaponType* CWorld::GetWeaponType(int id)
+{
+	return &m_aWeapons[id];
 }
 
 CWorld::CWorld()

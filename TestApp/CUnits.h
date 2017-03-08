@@ -1,14 +1,13 @@
 #pragma once
-#include "CVector2D.h"
 #include "CGameObject.h"
-#include <vector>
 #include <memory>
-#include "CStates.h"
-
-class CUnits:public CGameObject
+#include <vector>
+#include "CVector2D.h"
+class CWorld;
+class CUnits :public CGameObject
 {
 public:
-	void Init();
+	void Init(int idType);
 	void Destroy();
 	void Update(float delta);
 	void Render();
@@ -19,13 +18,21 @@ public:
 	int m_iIdFaction;
 	CVector2D m_v2Direction;
 	float m_fHp;
-	CStates* m_State;
+	int m_State;
 	int m_iGroupId;
+	bool m_bSelectable;
 	std::vector<std::shared_ptr<CGameObject>>* m_vQueueConstruction;
 	std::vector<std::shared_ptr<CGameObject>>* m_vListaGarrison;
-	float m_ReloadTime;
+	float m_fReloadTime;
 	float m_fRotingTimer;
+	float m_fConstructionTimer;
 	CUnits *m_UnitInteract;
+	CWorld *m_World;
+	CVector2D m_v2Coordinates;
+	bool EnemyInVisionRange();
+	bool IsAnEnemyFaction(int id);
+	bool IsBelic();
+	bool CanEnter(CUnits* unit);
 	CUnits();
 	~CUnits();
 };

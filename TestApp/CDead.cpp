@@ -2,16 +2,18 @@
 
 
 
-int CDead::Update(std::shared_ptr<CGameObject> unit)
+int CDead::Update(std::shared_ptr<CUnits> unit, float deltaTime)
 {
-	return 0;
+	return STATEROTING;
 }
 
-void CDead::OnEnter()
+void CDead::OnEnter(CUnits *unit)
 {
+	unit->m_bSelectable = false;
+
 }
 
-void CDead::OnExit()
+void CDead::OnExit(CUnits *unit)
 {
 }
 

@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
 #include <memory>
+
+
 class CWeaponType
 {
 public:

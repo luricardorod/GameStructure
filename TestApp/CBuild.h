@@ -4,9 +4,9 @@ class CBuild :
 	public CStates
 {
 public:
-	int Update(std::shared_ptr<CGameObject> unit);
-	void OnEnter();
-	void OnExit();
+	int Update(std::shared_ptr<CUnits> unit, float deltaTime);
+	void OnEnter(CUnits *unit);
+	void OnExit(CUnits *unit);
 	CBuild();
 	~CBuild();
 };

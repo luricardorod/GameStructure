@@ -2,8 +2,13 @@
 #include "CVector2D.h"
 #include "PrimitiveInstance.h"
 
-#define CLASSBOID 0
-#define CLASSOBSTACLE 1
+enum ClassEnum
+{
+	CLASSBOID,
+	CLASSOBSTACLE,
+	CLASSUNIT
+};
+
 class CGameObject
 {
 protected:

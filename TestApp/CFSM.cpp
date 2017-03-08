@@ -8,21 +8,21 @@
 #include "CBuild.h";
 #include "CGarrison.h";
 
-void CFSM::SetState(CUnits *unit, CStates * state)
+void CFSM::SetState(CUnits *unit, int state)
 {
-	unit->m_State->OnExit();
+	m_States[unit->m_State]->OnExit(unit);
 	unit->m_State = state;
-	unit->m_State->OnEnter();
+	m_States[unit->m_State]->OnEnter(unit);
 
 }
 
-void CFSM::Update()
+void CFSM::Update(float deltaTime)
 {
 	for (auto &unit : m_pUnits) {
-		int idState = unit->m_State->Update(unit);
+		int idState = m_States[unit->m_State]->Update(unit, deltaTime);
 		if (idState != COUNTSTATES)
 		{
-			SetState(unit.get(), m_States[idState]);
+			SetState(unit.get(), idState);
 		};
 	}
 }

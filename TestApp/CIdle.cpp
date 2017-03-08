@@ -1,26 +1,25 @@
 #include "CIdle.h"
-#include "CUnits.h"
 
-int CIdle::Update(std::shared_ptr<CGameObject> unit)
+
+int CIdle::Update(std::shared_ptr<CUnits> unit, float deltaTime)
 {
-	CUnits *tempUnit = std::dynamic_pointer_cast<CUnits>(unit).get();
-	/*if (isbelic)
+	CTypes *tempType = unit->m_World->GetType(unit->m_iIdType);
+	
+	if (unit->IsBelic())
 	{
-			m_UnityInteract = Unidad Enemiga ceeercana
-		if (m_UnityInteract)
+		if (unit->EnemyInVisionRange())
 		{
-			
+			return STATEATTACK;
 		}
 	}
-	return*/
 	return COUNTSTATES;
 }
 
-void CIdle::OnEnter()
+void CIdle::OnEnter(CUnits *unit)
 {
 }
 
-void CIdle::OnExit()
+void CIdle::OnExit(CUnits *unit)
 {
 }
 

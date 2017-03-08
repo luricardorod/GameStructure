@@ -1,24 +1,16 @@
 #pragma once
-#include "CGameObject.h"
+#include "CWorld.h"
 #include <memory>
-enum STATES
-{
-	STATEIDLE,
-	STATEMOVETO,
-	STATEATTACK,
-	STATEDEAD,
-	STATEROTING,
-	STATERECOLLECT,
-	STATEBUILD,
-	STATEGARRISON,
-	COUNTSTATES
-};
+#include "CUnits.h"
+#include "CTypes.h"
+#include "CVector2D.h"
+#include "definitions.h"
 class CStates
 {
 public:
-	virtual int Update(std::shared_ptr<CGameObject> unit) = 0;
-	virtual void OnEnter() = 0;
-	virtual void OnExit() = 0;
+	virtual int Update(std::shared_ptr<CUnits> unit, float deltaTime) = 0;
+	virtual void OnEnter(CUnits *unit) = 0;
+	virtual void OnExit(CUnits *unit) = 0;
 	virtual ~CStates() {};
 };
 

@@ -1,5 +1,6 @@
 #include "CFaction.h"
 
+
 CFaction::CFaction()
 {
 }

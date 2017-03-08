@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
 #include <memory>
+
+
 class CFaction
 {
 public:
@@ -12,5 +14,6 @@ public:
 	//Modifiers
 	CFaction();
 	~CFaction();
+
 };
 

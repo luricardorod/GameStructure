@@ -2,16 +2,20 @@
 
 
 
-int CAttack::Update(std::shared_ptr<CGameObject> unit)
+int CAttack::Update(std::shared_ptr<CUnits> unit, float deltaTime)
 {
-	return 0;
+	if (unit->m_UnitInteract)
+	{
+		
+	}
+	return STATEIDLE;
 }
 
-void CAttack::OnEnter()
+void CAttack::OnEnter(CUnits *unit)
 {
 }
 
-void CAttack::OnExit()
+void CAttack::OnExit(CUnits *unit)
 {
 }
 
