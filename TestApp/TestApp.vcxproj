@@ -154,8 +154,11 @@
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="CAttack.cpp" />
+    <ClCompile Include="CBestFS.cpp" />
+    <ClCompile Include="CBFS.cpp" />
     <ClCompile Include="CBuild.cpp" />
     <ClCompile Include="CDead.cpp" />
+    <ClCompile Include="CDFS.cpp" />
     <ClCompile Include="CFaction.cpp" />
     <ClCompile Include="CBoid.cpp" />
     <ClCompile Include="CFSM.cpp" />
@@ -176,8 +179,11 @@
   <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="CAttack.h" />
+    <ClInclude Include="CBestFS.h" />
+    <ClInclude Include="CBFS.h" />
     <ClInclude Include="CBuild.h" />
     <ClInclude Include="CDead.h" />
+    <ClInclude Include="CDFS.h" />
     <ClInclude Include="CFaction.h" />
     <ClInclude Include="CBoid.h" />
     <ClInclude Include="CFSM.h" />
@@ -192,6 +198,7 @@
     <ClInclude Include="CTypes.h" />
     <ClInclude Include="CUnits.h" />
     <ClInclude Include="CVector2D.h" />
+    <ClInclude Include="CWalker.h" />
     <ClInclude Include="CWeaponType.h" />
     <ClInclude Include="CWorld.h" />
     <ClInclude Include="definitions.h" />

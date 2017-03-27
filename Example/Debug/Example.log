@@ -1,13 +1,4 @@
-﻿  Win32Framework.cpp
-  UtilsGL.cpp
-  TriangleGL.cpp
-  Timer.cpp
+﻿  TriangleGL.cpp
   PrimitiveManager.cpp
-  PrimitiveInstance.cpp
-  InputManager.cpp
-  GLDriver.cpp
-  CubeGL.cpp
-  CuadGL.cpp
-  Core.cpp
   Generating Code...
   Example.vcxproj -> E:\UAD\5to\ia\GameStructure\Debug\Framework.lib
