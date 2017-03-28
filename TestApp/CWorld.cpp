@@ -75,7 +75,7 @@ void CWorld::Init()
 
 	std::vector<nodo>grafo;
 	grafo.resize(12);
-	grafo[0].m_conections.push_back((*new Conection(10, &grafo[0])));
+	grafo[0].m_conections.push_back((*new Conection(10, &grafo[1])));
 	grafo[0].m_conections.push_back((*new Conection(10, &grafo[2])));
 	grafo[0].m_conections.push_back((*new Conection(10, &grafo[8])));
 	grafo[0].m_conections.push_back((*new Conection(10, &grafo[9])));

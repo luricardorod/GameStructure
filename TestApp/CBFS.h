@@ -6,7 +6,7 @@ class CBFS :
 {
 public:
 	void PathFinding(nodo *start, nodo*end, std::vector<nodo*> *path, int euristicType);
-	std::queue<nodo> m_wait;
+	std::queue<nodo*> m_wait;
 
 	CBFS();
 	~CBFS();
