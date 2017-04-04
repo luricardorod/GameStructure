@@ -160,12 +160,12 @@ void CWorld::Init()
 	std::vector<nodo*>lo;
 	std::vector<nodo*>raq;
 	CDFS lu;
-	lu.PathFinding(&grafo[1], &grafo[11], &pat, 0);
+	lu.PathFinding(&grafo[0], &grafo[11], &pat, 0);
 	CBFS la;
-	la.PathFinding(&grafo[1], &grafo[11], &lo, 0);
+	la.PathFinding(&grafo[0], &grafo[11], &lo, 0);
 	CBestFS el;
-	el.PathFinding(&grafo[1], &grafo[11], &raq, 0);
-	int lau;
+	el.PathFinding(&grafo[0], &grafo[11], &raq, 2);
+	int lau=0;
 	lau++;
 }
 

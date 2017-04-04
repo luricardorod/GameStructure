@@ -1,40 +1,51 @@
 #include "CBFS.h"
 
-
-
-void CBFS::PathFinding(nodo * start, nodo * end, std::vector<nodo*>* path, int euristicType)
+void CBFS::InsertNodoInWait(node* newNodo, nodeInfo *father)
 {
-	m_wait.push(start);
-	start->m_father = NULL;
-	m_reviewed.push_back(start);
-	path->clear();
-	nodo *temp;
-	while (!m_wait.empty())
+	bool flag = true;
+	for (auto i = m_reviewed.begin(); i != m_reviewed.end(); i++)
 	{
-
-		temp = m_wait.front();
-		if (temp == end)
+		if (i->m_reference == newNodo)
 		{
+			flag = false;
 			break;
 		}
-		for (auto conection = temp->m_conections.begin(); conection != temp->m_conections.end(); conection++)
-		{
-			std::vector<nodo*>::iterator reviewedNodes;
-			reviewedNodes = std::find(m_reviewed.begin(), m_reviewed.end(), (*conection).m_nodo);
-			if (reviewedNodes == m_reviewed.end())
-			{
-				(*conection).m_nodo->m_father = temp;
-				m_wait.push((*conection).m_nodo);
-			}
-		}
-		m_reviewed.push_back(temp);
+	}
+	if (flag)
+	{
+		nodeInfo temp;
+		temp.m_father = father;
+		temp.m_reference = newNodo;
+		m_reviewed.push_back((*father));
+	}
+}
+
+void CBFS::ClearWait()
+{
+	while (!m_wait.empty())
+	{
 		m_wait.pop();
 	}
-	while (temp != NULL)
+}
+
+bool CBFS::EmptyListWait()
+{
+	return m_wait.empty();
+}
+
+nodeInfo CBFS::NextNodoInWait()
+{
+	nodeInfo temp;
+	if (m_wait.empty())
 	{
-		path->push_back(temp);
-		temp = temp->m_father;
+		temp.m_reference = NULL;
 	}
+	else
+	{
+		temp = m_wait.front();
+		m_wait.pop();
+	}
+	return temp;
 }
 
 CBFS::CBFS()

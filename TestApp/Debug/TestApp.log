@@ -1,3 +1,214 @@
-﻿  LINK : E:\UAD\5to\ia\GameStructure\bin\TestApp.exe not found or not built by the last incremental link; performing full link
-  TestApp.vcxproj -> E:\UAD\5to\ia\GameStructure\bin\TestApp.exe
-  TestApp.vcxproj -> E:\UAD\5to\ia\GameStructure\bin\TestApp.pdb (Full PDB)
+﻿  CWalker.cpp
+  CDFS.cpp
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cdfs.h(8): error C2061: error de sintaxis: identificador 'nodo'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cdfs.h(9): error C2065: 'nodo': identificador no declarado
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cdfs.h(9): error C2059: error de sintaxis: '>'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cdfs.h(9): error C2976: 'std::stack': no hay suficientes argumentos de plantilla
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\stack(17): note: vea la declaración de 'std::stack'
+  CBFS.cpp
+  CBestFS.cpp
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cbestfs.h(8): error C2061: error de sintaxis: identificador 'nodo'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cbestfs.h(9): error C2065: 'nodo': identificador no declarado
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cbestfs.h(9): error C2059: error de sintaxis: '>'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cbestfs.h(9): error C2976: 'std::list': no hay suficientes argumentos de plantilla
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\list(863): note: vea la declaración de 'std::list'
+  Generando código...
+  Compilando...
+  CWorld.cpp
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cboid.h(1): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cdfs.h(8): error C2061: error de sintaxis: identificador 'nodo'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cdfs.h(9): error C2065: 'nodo': identificador no declarado
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cdfs.h(9): error C2059: error de sintaxis: '>'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cdfs.h(9): error C2976: 'std::stack': no hay suficientes argumentos de plantilla
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\stack(17): note: vea la declaración de 'std::stack'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cbestfs.h(8): error C2061: error de sintaxis: identificador 'nodo'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cbestfs.h(9): error C2065: 'nodo': identificador no declarado
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cbestfs.h(9): error C2059: error de sintaxis: '>'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cbestfs.h(9): error C2976: 'std::list': no hay suficientes argumentos de plantilla
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\list(863): note: vea la declaración de 'std::list'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(76): error C2065: 'nodo': identificador no declarado
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(76): error C2923: 'std::vector': 'nodo' no es un argumento de tipo de plantilla válido para el parámetro '_Ty'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(76): error C3203: 'allocator': clase plantilla sin especializar no se puede utilizar como argumento de plantilla para el parámetro de plantilla '_Alloc'; se esperaba un tipo real
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(76): error C2133: 'grafo': tamaño desconocido
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(76): error C2512: 'std::vector': no hay disponible un constructor predeterminado adecuado
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(679): note: vea la declaración de 'std::vector'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(77): error C2663: 'std::vector<_Ty,_Alloc>::resize': 2 sobrecargas no tienen ninguna conversión válida para el puntero 'this'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(78): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(78): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(78): error C2228: el operando izquierdo de '.m_conections' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(78): error C2228: el operando izquierdo de '.push_back' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(78): error C2088: '[': no es válido para class
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(78): error C2664: 'Conection::Conection(Conection &&)': el argumento 1 no puede convertirse de 'int' a 'const Conection &'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(78): note: Razón: no se puede realizar la conversión de 'int' a 'const Conection'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(78): note: Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(79): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(79): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(79): error C2228: el operando izquierdo de '.m_conections' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(79): error C2228: el operando izquierdo de '.push_back' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(79): error C2088: '[': no es válido para class
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(79): error C2664: 'Conection::Conection(Conection &&)': el argumento 1 no puede convertirse de 'int' a 'const Conection &'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(79): note: Razón: no se puede realizar la conversión de 'int' a 'const Conection'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(79): note: Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(80): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(80): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(80): error C2228: el operando izquierdo de '.m_conections' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(80): error C2228: el operando izquierdo de '.push_back' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(80): error C2088: '[': no es válido para class
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(80): error C2664: 'Conection::Conection(Conection &&)': el argumento 1 no puede convertirse de 'int' a 'const Conection &'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(80): note: Razón: no se puede realizar la conversión de 'int' a 'const Conection'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(80): note: Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(81): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(81): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(81): error C2228: el operando izquierdo de '.m_conections' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(81): error C2228: el operando izquierdo de '.push_back' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(81): error C2088: '[': no es válido para class
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(81): error C2664: 'Conection::Conection(Conection &&)': el argumento 1 no puede convertirse de 'int' a 'const Conection &'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(81): note: Razón: no se puede realizar la conversión de 'int' a 'const Conection'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(81): note: Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(82): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(82): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(82): error C2228: el operando izquierdo de '.m_id' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(83): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(83): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(83): error C2228: el operando izquierdo de '.m_position' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(83): error C2228: el operando izquierdo de '.x' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(84): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(84): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(84): error C2228: el operando izquierdo de '.m_position' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(84): error C2228: el operando izquierdo de '.y' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(85): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(85): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(85): error C2228: el operando izquierdo de '.m_conections' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(85): error C2228: el operando izquierdo de '.push_back' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(85): error C2088: '[': no es válido para class
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(85): error C2664: 'Conection::Conection(Conection &&)': el argumento 1 no puede convertirse de 'int' a 'const Conection &'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(85): note: Razón: no se puede realizar la conversión de 'int' a 'const Conection'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(85): note: Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(86): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(86): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(86): error C2228: el operando izquierdo de '.m_conections' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(86): error C2228: el operando izquierdo de '.push_back' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(86): error C2088: '[': no es válido para class
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(86): error C2664: 'Conection::Conection(Conection &&)': el argumento 1 no puede convertirse de 'int' a 'const Conection &'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(86): note: Razón: no se puede realizar la conversión de 'int' a 'const Conection'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(86): note: Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(87): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(87): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(87): error C2228: el operando izquierdo de '.m_conections' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(87): error C2228: el operando izquierdo de '.push_back' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(87): error C2088: '[': no es válido para class
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(87): error C2664: 'Conection::Conection(Conection &&)': el argumento 1 no puede convertirse de 'int' a 'const Conection &'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(87): note: Razón: no se puede realizar la conversión de 'int' a 'const Conection'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(87): note: Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(88): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(88): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(88): error C2228: el operando izquierdo de '.m_conections' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(88): error C2228: el operando izquierdo de '.push_back' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(88): error C2088: '[': no es válido para class
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(88): error C2664: 'Conection::Conection(Conection &&)': el argumento 1 no puede convertirse de 'int' a 'const Conection &'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(88): note: Razón: no se puede realizar la conversión de 'int' a 'const Conection'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(88): note: Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(89): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(89): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(89): error C2228: el operando izquierdo de '.m_id' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(90): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(90): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(90): error C2228: el operando izquierdo de '.m_position' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(90): error C2228: el operando izquierdo de '.x' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(91): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(91): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(91): error C2228: el operando izquierdo de '.m_position' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(91): error C2228: el operando izquierdo de '.y' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(92): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(92): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(92): error C2228: el operando izquierdo de '.m_conections' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(92): error C2228: el operando izquierdo de '.push_back' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(92): error C2088: '[': no es válido para class
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(92): error C2664: 'Conection::Conection(Conection &&)': el argumento 1 no puede convertirse de 'int' a 'const Conection &'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(92): note: Razón: no se puede realizar la conversión de 'int' a 'const Conection'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(92): note: Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(93): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(93): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(93): error C2228: el operando izquierdo de '.m_conections' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(93): error C2228: el operando izquierdo de '.push_back' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(93): error C2088: '[': no es válido para class
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(93): error C2664: 'Conection::Conection(Conection &&)': el argumento 1 no puede convertirse de 'int' a 'const Conection &'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(93): note: Razón: no se puede realizar la conversión de 'int' a 'const Conection'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(93): note: Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(94): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(94): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(94): error C2228: el operando izquierdo de '.m_conections' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(94): error C2228: el operando izquierdo de '.push_back' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(94): error C2088: '[': no es válido para class
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(94): error C2664: 'Conection::Conection(Conection &&)': el argumento 1 no puede convertirse de 'int' a 'const Conection &'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(94): note: Razón: no se puede realizar la conversión de 'int' a 'const Conection'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(94): note: Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(95): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(95): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(95): error C2228: el operando izquierdo de '.m_id' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(96): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(96): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(96): error C2228: el operando izquierdo de '.m_position' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(96): error C2228: el operando izquierdo de '.x' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(97): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(97): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(97): error C2228: el operando izquierdo de '.m_position' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(97): error C2228: el operando izquierdo de '.y' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(98): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(98): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(98): error C2228: el operando izquierdo de '.m_conections' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(98): error C2228: el operando izquierdo de '.push_back' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(98): error C2088: '[': no es válido para class
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(98): error C2664: 'Conection::Conection(Conection &&)': el argumento 1 no puede convertirse de 'int' a 'const Conection &'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(98): note: Razón: no se puede realizar la conversión de 'int' a 'const Conection'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(98): note: Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(99): error C2678: '[' binario: no se encontró un operador que adopte un operando en la parte izquierda de tipo 'std::vector' (o bien no existe una conversión aceptable)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1229): note: puede ser '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1213): note: o       '_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const'
+  c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(99): note: al hacer coincidir la lista de argumentos '(std::vector, int)'
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(99): error C2228: el operando izquierdo de '.m_conections' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(99): error C2228: el operando izquierdo de '.push_back' debe tener class/struct/union
+c:\users\bluemonkey\documents\5to\gamestructure\testapp\cworld.cpp(99): fatal error C1003: el recuento de errores supera 100; se detiene la compilación
+  Generando código...

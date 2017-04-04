@@ -172,6 +172,7 @@
     <ClCompile Include="CTypes.cpp" />
     <ClCompile Include="CUnits.cpp" />
     <ClCompile Include="CVector2D.cpp" />
+    <ClCompile Include="CWalker.cpp" />
     <ClCompile Include="CWeaponType.cpp" />
     <ClCompile Include="CWorld.cpp" />
     <ClCompile Include="TestApp.cpp" />
