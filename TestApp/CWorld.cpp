@@ -73,7 +73,7 @@ void CWorld::Init()
 	m_aFactions = new CFaction[FACTIONS_SIZE];
 	m_aWeapons = new CWeaponType[WEAPONS_SIZE];
 
-	std::vector<nodo>grafo;
+	std::vector<node>grafo;
 	grafo.resize(12);
 	grafo[0].m_conections.push_back((*new Conection(10, &grafo[1])));
 	grafo[0].m_conections.push_back((*new Conection(10, &grafo[2])));
@@ -156,15 +156,14 @@ void CWorld::Init()
 	grafo[11].m_id = 11;
 
 
-	std::vector<nodo*>pat;
-	std::vector<nodo*>lo;
-	std::vector<nodo*>raq;
-	CDFS lu;
-	lu.PathFinding(&grafo[0], &grafo[11], &pat, 0);
+	std::vector<node*>pat;
+
+
 	CBFS la;
-	la.PathFinding(&grafo[0], &grafo[11], &lo, 0);
-	CBestFS el;
-	el.PathFinding(&grafo[0], &grafo[11], &raq, 2);
+	la.SetStart(&grafo[0]);
+	la.SetEnd(&grafo[11]);
+	pat = la.PathFinding();
+
 	int lau=0;
 	lau++;
 }

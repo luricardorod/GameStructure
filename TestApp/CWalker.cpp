@@ -33,12 +33,12 @@ std::vector<node*> CWalker::PathFinding(HEURISTIC_TYPE::E euristicType)
 {
 	ClearWait();
 	InsertNodoInWait(m_start.m_reference, NULL);
-	nodeInfo temp;
+	nodeInfo* temp;
 	bool flagPath = false;
 	while (!EmptyListWait())
 	{
 		temp = NextNodoInWait();
-		if (temp.m_reference == m_end.m_reference)
+		if (temp->m_reference == m_end.m_reference)
 		{
 			flagPath = true;
 			break;
@@ -48,21 +48,25 @@ std::vector<node*> CWalker::PathFinding(HEURISTIC_TYPE::E euristicType)
 	//si encotnro el nodo final, else si no encuantra el camino
 	if (flagPath)
 	{
-
+		std::vector<node*> path;
+		while(temp->m_father != NULL) {
+			path.push_back(temp->m_reference);
+			temp = temp->m_father;
+		}
 	}
 	else
 	{
-
-	
+		return std::vector<node*>();
 	}
-	return std::vector<node*>();
+	
 }
 
-void CWalker::InsertChilds(nodeInfo father)
+void CWalker::InsertChilds(nodeInfo* father)
 {
-	for (auto conection =father.m_reference->m_conections.begin(); conection != father.m_reference->m_conections.end(); conection++)
+	int lol = father->m_reference->m_conections.size();
+	for (int i = 0; i < lol; i++)
 	{
-		InsertNodoInWait((*conection).m_node, &father);
+		InsertNodoInWait(father->m_reference->m_conections[i].m_node, father);
 	}
 }
 

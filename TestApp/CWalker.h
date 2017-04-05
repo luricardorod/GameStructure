@@ -27,7 +27,7 @@ struct Conection
 
 struct node
 {
-	int m_iid;
+	int m_id;
 	CVector2D m_position;
 	std::vector<Conection> m_conections;
 };
@@ -53,10 +53,10 @@ public:
 	std::vector<node*> PathFinding(HEURISTIC_TYPE::E euristicType=HEURISTIC_TYPE::kNONE);
 	
 	virtual void InsertNodoInWait(node *newNodo, nodeInfo *father) = 0;
-	void InsertChilds(nodeInfo father);
+	void InsertChilds(nodeInfo* father);
 	virtual void ClearWait() = 0;
 	virtual bool EmptyListWait() = 0;
-	virtual nodeInfo NextNodoInWait() = 0;
+	virtual nodeInfo* NextNodoInWait() = 0;
 	virtual ~CWalker() {}
 };
 

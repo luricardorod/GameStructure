@@ -14,9 +14,10 @@ void CBFS::InsertNodoInWait(node* newNodo, nodeInfo *father)
 	if (flag)
 	{
 		nodeInfo temp;
-		temp.m_father = father;
-		temp.m_reference = newNodo;
-		m_reviewed.push_back((*father));
+		m_reviewed.push_back(temp);
+		m_reviewed.back().m_father = father;
+		m_reviewed.back().m_reference = newNodo;
+		m_wait.push(&m_reviewed.);
 	}
 }
 
@@ -33,12 +34,12 @@ bool CBFS::EmptyListWait()
 	return m_wait.empty();
 }
 
-nodeInfo CBFS::NextNodoInWait()
+nodeInfo* CBFS::NextNodoInWait()
 {
-	nodeInfo temp;
+	nodeInfo* temp;
 	if (m_wait.empty())
 	{
-		temp.m_reference = NULL;
+		temp = NULL;
 	}
 	else
 	{
