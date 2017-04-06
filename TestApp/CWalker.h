@@ -47,7 +47,7 @@ private:
 	nodeInfo m_start;
 	nodeInfo m_end;
 public:
-	std::vector<nodeInfo> m_reviewed;
+	std::vector<nodeInfo*> m_reviewed;
 	void SetStart(node* start);
 	void SetEnd(node* end);
 	std::vector<node*> PathFinding(HEURISTIC_TYPE::E euristicType=HEURISTIC_TYPE::kNONE);

@@ -158,9 +158,8 @@ void CWorld::Init()
 
 	std::vector<node*>pat;
 
-
 	CBFS la;
-	la.SetStart(&grafo[0]);
+	la.SetStart(&grafo[1]);
 	la.SetEnd(&grafo[11]);
 	pat = la.PathFinding();
 

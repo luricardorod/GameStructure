@@ -45,19 +45,20 @@ std::vector<node*> CWalker::PathFinding(HEURISTIC_TYPE::E euristicType)
 		}
 		InsertChilds(temp);
 	}
-	//si encotnro el nodo final, else si no encuantra el camino
+	//si encotnro el nodo final
 	if (flagPath)
 	{
 		std::vector<node*> path;
-		while(temp->m_father != NULL) {
+		while(temp->m_father != NULL)
+		{
 			path.push_back(temp->m_reference);
 			temp = temp->m_father;
 		}
+		path.push_back(temp->m_reference);
+		return path;
 	}
-	else
-	{
-		return std::vector<node*>();
-	}
+
+	return std::vector<node*>();
 	
 }
 
