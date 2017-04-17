@@ -6,10 +6,10 @@ class CBFS :
 {
 public:
 
-	virtual void InsertNodoInWait(node* newNodo, nodeInfo *father);
+	virtual void InsertNodeInWait(node *newNodo, nodeInfo *father, float value = 0);
 	virtual void ClearWait();
-	virtual bool EmptyListWait();
-	virtual nodeInfo* NextNodoInWait();
+	virtual bool IsEmptyWait();
+	virtual nodeInfo* NextNodeInWait();
 
 	std::queue<nodeInfo*> m_wait;
 

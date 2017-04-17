@@ -1,24 +1,12 @@
 #include "CBFS.h"
 
-void CBFS::InsertNodoInWait(node* newNodo, nodeInfo *father)
+void CBFS::InsertNodeInWait(node* newNodo, nodeInfo *father, float value)
 {
-	bool flag = true;
-	for (auto i = m_reviewed.begin(); i != m_reviewed.end(); i++)
-	{
-		if ((*i)->m_reference == newNodo)
-		{
-			flag = false;
-			break;
-		}
-	}
-	if (flag)
-	{
-		nodeInfo temp;
-		temp.m_father = father;
-		temp.m_reference = newNodo;
-		m_reviewed.push_back(&temp);
-		m_wait.push(&temp);
-	}
+	nodeInfo* temp = new nodeInfo;
+	temp->m_father = father;
+	temp->m_reference = newNodo;
+	m_reviewed.push_back(temp);
+	m_wait.push(temp);
 }
 
 void CBFS::ClearWait()
@@ -29,17 +17,13 @@ void CBFS::ClearWait()
 	}
 }
 
-bool CBFS::EmptyListWait()
+bool CBFS::IsEmptyWait()
 {
 	return m_wait.empty();
 }
 
-nodeInfo* CBFS::NextNodoInWait()
+nodeInfo* CBFS::NextNodeInWait()
 {
-	if (m_wait.empty())
-	{
-		return NULL;
-	}
 
 	nodeInfo* temp = m_wait.front();
 	m_wait.pop();
@@ -49,7 +33,6 @@ nodeInfo* CBFS::NextNodoInWait()
 
 CBFS::CBFS()
 {
-	m_reviewed.reserve(200);
 }
 
 

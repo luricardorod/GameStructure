@@ -175,6 +175,7 @@
     <ClCompile Include="CWalker.cpp" />
     <ClCompile Include="CWeaponType.cpp" />
     <ClCompile Include="CWorld.cpp" />
+    <ClCompile Include="CDijkstra.cpp" />
     <ClCompile Include="TestApp.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -203,6 +204,7 @@
     <ClInclude Include="CWeaponType.h" />
     <ClInclude Include="CWorld.h" />
     <ClInclude Include="definitions.h" />
+    <ClInclude Include="CDijkstra.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

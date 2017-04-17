@@ -35,7 +35,7 @@ struct node
 
 struct nodeInfo 
 {
-	nodeInfo* m_father;
+	nodeInfo *m_father;
 	float m_fvalue;
 	node* m_reference;
 };
@@ -43,20 +43,25 @@ struct nodeInfo
 
 class CWalker
 {
-private:
+public:
 	nodeInfo m_start;
 	nodeInfo m_end;
-public:
+	HEURISTIC_TYPE::E m_euristicType = HEURISTIC_TYPE::kNONE;
+	std::vector<node*> m_path;
 	std::vector<nodeInfo*> m_reviewed;
 	void SetStart(node* start);
 	void SetEnd(node* end);
-	std::vector<node*> PathFinding(HEURISTIC_TYPE::E euristicType=HEURISTIC_TYPE::kNONE);
-	
-	virtual void InsertNodoInWait(node *newNodo, nodeInfo *father) = 0;
-	void InsertChilds(nodeInfo* father);
+	void SetHeuristic(HEURISTIC_TYPE::E heuristic);
+	float Evaluateheuristics(CVector2D *vec1);
+	void RunPathFinding();
+	virtual std::vector<node*> PathFinding();
+	bool IsNodeInReviewed(node* newNodo);
+	void ClearReviewed();
+	virtual bool EndPathFinding(nodeInfo* temp);
+	virtual void InsertChilds(nodeInfo* father);
+	virtual void InsertNodeInWait(node *newNodo, nodeInfo *father, float value = 0) = 0;
 	virtual void ClearWait() = 0;
-	virtual bool EmptyListWait() = 0;
-	virtual nodeInfo* NextNodoInWait() = 0;
+	virtual bool IsEmptyWait() = 0;
+	virtual nodeInfo* NextNodeInWait() = 0;
 	virtual ~CWalker() {}
 };
-

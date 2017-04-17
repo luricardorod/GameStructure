@@ -1,3 +1,4 @@
-﻿  CBFS.cpp
-  TestApp.vcxproj -> C:\Users\blueMonkey\Documents\5to\GameStructure\bin\TestApp.exe
-  TestApp.vcxproj -> C:\Users\blueMonkey\Documents\5to\GameStructure\bin\TestApp.pdb (Full PDB)
+﻿  CWorld.cpp
+e:\uad\5to\ia\gamestructure\testapp\cboid.h(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  TestApp.vcxproj -> E:\UAD\5to\ia\GameStructure\bin\TestApp.exe
+  TestApp.vcxproj -> E:\UAD\5to\ia\GameStructure\bin\TestApp.pdb (Full PDB)

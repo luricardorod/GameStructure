@@ -83,6 +83,9 @@
     <ClCompile Include="CWalker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CDijkstra.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -158,6 +161,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CBestFS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDijkstra.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
